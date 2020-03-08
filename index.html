@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Image Comparator
+        </title>
+        <script lang="javascript">
+            function changeImage()   {
+                var x = document.getElementById("mySelect");
+                suffix_name = x.options[x.selectedIndex].label
+
+                // clear out old images
+                document.getElementById('gt_graph').innerHTML = "";
+                document.getElementById('gt_image').innerHTML = "";
+                document.getElementById('vg_graph').innerHTML = "";
+                document.getElementById('vg_image').innerHTML = "";
+                document.getElementById('vrd_graph').innerHTML = "";
+                document.getElementById('vrd_image').innerHTML = "";
+
+                console.log(suffix_name)
+
+                // gt images
+                var img_gt_graph = document.createElement("img");
+                img_gt_graph.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/GT_VRD/"+suffix_name+"_graph.png";
+                img_gt_graph.style.width = "100%";
+                document.getElementById('gt_graph').appendChild(img_gt_graph);
+                var img_gt_image = document.createElement("img");
+                img_gt_image.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/GT_VRD/"+suffix_name+".jpg";
+                img_gt_image.style.width = "100%";
+                document.getElementById('gt_image').appendChild(img_gt_image);
+
+                // vrd using vg
+                var img_vg_graph = document.createElement("img");
+                img_vg_graph.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VG/"+suffix_name+"_graph.png";
+                img_vg_graph.style.width = "100%";
+                document.getElementById('vg_graph').appendChild(img_vg_graph);
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VG/"+suffix_name+".png";
+                img_vg_image.style.width = "100%";
+                document.getElementById('vg_image').appendChild(img_vg_image);
+
+                // vrd using vrd
+                var img_vrd_graph = document.createElement("img");
+                img_vrd_graph.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VRD/"+suffix_name+"_graph.png";
+                img_vrd_graph.style.width = "100%";
+                document.getElementById('vrd_graph').appendChild(img_vrd_graph);
+                var img_vrd_image = document.createElement("img");
+                img_vrd_image.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VRD/"+suffix_name+".png";
+                img_vrd_image.style.width = "100%";
+                document.getElementById('vrd_image').appendChild(img_vrd_image);
+            }
+
+            function selectRandom() {
+                var select = document.getElementById('mySelect');
+                var items = select.getElementsByTagName('option');
+                var index = Math.floor(Math.random() * items.length);
+                select.selectedIndex = index;
+
+                changeImage();
+            }
+        </script>
+    </head>
+    <body>
+        <table style="background-color: ; margin: auto;" width="1500">
+            <tr>
+                <td width="50%">
+                    <select id="mySelect" style="width: 100%; height: 3vh; font-size: 2vh">
+                        <option> 3373056123_8fd7fb0365_b
+                        <option> 3578489233_caacd6f90b_b
+                        <option> 4294972983_35f43cf97f_b
+                        <option> 5313611179_92c5f62da6_b
+                        <option> 5315650616_a1e4d88121_b
+                        <option> 8141082799_89ce1e03d5_b
+                        <option> 9148597758_b7cbe520c4_b
+                        <option> 9281624471_f030c5331e_b
+                        <option> 7205963930_cea220ba20_b
+                        <option> 177941036_5bf2f82044_b
+                        <option> 4552631826_e2d2ded534_o
+                        <option> 6434621213_a3562bf97d_b
+                        <option> 8667757362_a059961035_b
+                        <option> 9094361636_a194d14f41_b
+                        <option> 9672478776_51079e0811_b
+                    </select>
+                </td>
+                <td width="50%">
+                    <input type="button" value="View" onclick="changeImage();" style="height: 3vh; font-size: 2vh;"/>
+                    <input type="button" value="Random" onclick="selectRandom();" style="height: 3vh; font-size: 2vh;"/>
+                </td>
+            </tr>
+            <tr>
+                <th style="text-align: left;"><div style="padding: 20px;">Ground Truth</div></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td id="gt_graph">
+                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/GT_VRD/97493266_7ff3cbd9b8_o_graph.png" width="100%"/>
+                </td>
+                <td id="gt_image">
+                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/GT_VRD/97493266_7ff3cbd9b8_o.jpg" width="100%"/>
+                </td>
+            </tr>
+            <tr>
+                <th style="text-align: left;"><div style="padding: 20px;">Factorizable Net: on VRD using VG</div></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td id="vg_graph">
+                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VG/97493266_7ff3cbd9b8_o_graph.png" width="100%"/>
+                </td>
+                <td id="vg_image">
+                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VG/97493266_7ff3cbd9b8_o.png" width="100%"/>
+                </td>
+            </tr>
+            <tr>
+                <th style="text-align: left;"><div style="padding: 20px;">Factorizable Net: on VRD using VRD</div></th>
+                <th></th>
+            </tr>
+            <tr style="background-color: ;">
+                <td id="vrd_graph">
+                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VRD/97493266_7ff3cbd9b8_o_graph.png" width="100%"/>
+                </td>
+                <td id="vrd_image">
+                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VRD/97493266_7ff3cbd9b8_o.png" width="100%"/>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
