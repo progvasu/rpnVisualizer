@@ -10,44 +10,105 @@
                 suffix_name = x.options[x.selectedIndex].label
 
                 // clear out old images
-                document.getElementById('gt_graph').innerHTML = "";
-                document.getElementById('gt_image').innerHTML = "";
+                document.getElementById('raw').innerHTML = "";
+                document.getElementById('topk').innerHTML = "";
                 document.getElementById('vg_graph').innerHTML = "";
                 document.getElementById('vg_image').innerHTML = "";
-                document.getElementById('vrd_graph').innerHTML = "";
-                document.getElementById('vrd_image').innerHTML = "";
+                document.getElementById('pre1').innerHTML = "";
+                document.getElementById('pre2').innerHTML = "";
+                document.getElementById('pre3').innerHTML = "";
+                document.getElementById('pre4').innerHTML = "";
+                document.getElementById('pre5').innerHTML = "";
+                document.getElementById('pre6').innerHTML = "";
+                document.getElementById('post1').innerHTML = "";
+                document.getElementById('post2').innerHTML = "";
+                document.getElementById('post3').innerHTML = "";
+                document.getElementById('post4').innerHTML = "";
+                document.getElementById('post5').innerHTML = "";
+                document.getElementById('post6').innerHTML = "";
 
                 console.log(suffix_name)
 
-                // gt images
+                // raw image and topK
                 var img_gt_graph = document.createElement("img");
-                img_gt_graph.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/GT_VRD/"+suffix_name+"_graph.png";
+                img_gt_graph.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/raw/"+suffix_name+".jpg";
                 img_gt_graph.style.width = "100%";
-                document.getElementById('gt_graph').appendChild(img_gt_graph);
+                document.getElementById('raw').appendChild(img_gt_graph);
                 var img_gt_image = document.createElement("img");
-                img_gt_image.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/GT_VRD/"+suffix_name+".jpg";
+                img_gt_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topKBbox/"+suffix_name+".jpg";
                 img_gt_image.style.width = "100%";
-                document.getElementById('gt_image').appendChild(img_gt_image);
+                document.getElementById('topk').appendChild(img_gt_image);
 
                 // vrd using vg
                 var img_vg_graph = document.createElement("img");
-                img_vg_graph.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VG/"+suffix_name+"_graph.png";
+                img_vg_graph.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/sceneGraph/"+suffix_name+"_graph.png";
                 img_vg_graph.style.width = "100%";
                 document.getElementById('vg_graph').appendChild(img_vg_graph);
                 var img_vg_image = document.createElement("img");
-                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VG/"+suffix_name+".png";
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/sceneGraph/"+suffix_name+".png";
                 img_vg_image.style.width = "100%";
                 document.getElementById('vg_image').appendChild(img_vg_image);
+            
+                // pre and post brute force
+                // 1
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_pre1.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('pre1').appendChild(img_vg_image);
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_post1.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('post1').appendChild(img_vg_image);
 
-                // vrd using vrd
-                var img_vrd_graph = document.createElement("img");
-                img_vrd_graph.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VRD/"+suffix_name+"_graph.png";
-                img_vrd_graph.style.width = "100%";
-                document.getElementById('vrd_graph').appendChild(img_vrd_graph);
-                var img_vrd_image = document.createElement("img");
-                img_vrd_image.src = "https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VRD/"+suffix_name+".png";
-                img_vrd_image.style.width = "100%";
-                document.getElementById('vrd_image').appendChild(img_vrd_image);
+                // 2
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_pre2.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('pre2').appendChild(img_vg_image);
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_post2.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('post2').appendChild(img_vg_image);
+
+                // 3
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_pre3.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('pre3').appendChild(img_vg_image);
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_post3.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('post3').appendChild(img_vg_image);
+
+                // 4
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_pre4.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('pre4').appendChild(img_vg_image);
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_post4.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('post4').appendChild(img_vg_image);
+
+                // 5
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_pre5.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('pre5').appendChild(img_vg_image);
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_post5.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('post5').appendChild(img_vg_image);
+
+                // 6
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_pre6.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('pre6').appendChild(img_vg_image);
+                var img_vg_image = document.createElement("img");
+                img_vg_image.src = "https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/"+suffix_name+"_post6.jpg";
+                img_vg_image.style.width = "100%";
+                document.getElementById('post6').appendChild(img_vg_image);
             }
 
             function selectRandom() {
@@ -88,15 +149,15 @@
                 </td>
             </tr>
             <tr>
-                <th style="text-align: left;"><div style="padding: 20px;">Ground Truth</div></th>
-                <th></th>
+                <th style="text-align: left;"><div style="padding: 20px;">Original Image</div></th>
+                <th style="text-align: left;">Top 15 post-nms boxes</th>
             </tr>
             <tr>
-                <td id="gt_graph">
-                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/GT_VRD/97493266_7ff3cbd9b8_o_graph.png" width="100%"/>
+                <td id="raw">
+                    <img src="https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/raw/3373056123_8fd7fb0365_b.jpg" width="100%"/>
                 </td>
-                <td id="gt_image">
-                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/GT_VRD/97493266_7ff3cbd9b8_o.jpg" width="100%"/>
+                <td id="topk">
+                    <img src="https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topKBbox/3373056123_8fd7fb0365_b.jpg" width="100%"/>
                 </td>
             </tr>
             <tr>
@@ -105,24 +166,61 @@
             </tr>
             <tr>
                 <td id="vg_graph">
-                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VG/97493266_7ff3cbd9b8_o_graph.png" width="100%"/>
+                    <img src="https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/sceneGraph/3373056123_8fd7fb0365_b_graph.png" width="100%"/>
                 </td>
                 <td id="vg_image">
-                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VG/97493266_7ff3cbd9b8_o.png" width="100%"/>
+                    <img src="https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/sceneGraph/3373056123_8fd7fb0365_b.png" width="100%"/>
                 </td>
             </tr>
             <tr>
-                <th style="text-align: left;"><div style="padding: 20px;">Factorizable Net: on VRD using VRD</div></th>
-                <th></th>
+                <th style="text-align: left;"><div style="padding: 20px;">Pre NMS space limited boxes</div></th>
+                <th style="text-align: left;"><div style="padding: 20px;">Post NMS space limited boxes</div></th>
             </tr>
-            <tr style="background-color: ;">
-                <td id="vrd_graph">
-                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VRD/97493266_7ff3cbd9b8_o_graph.png" width="100%"/>
-                </td>
-                <td id="vrd_image">
-                    <img src="https://raw.githubusercontent.com/progvasu/sceneGraphVisualizer/master/fnet/VRD_using_VRD/97493266_7ff3cbd9b8_o.png" width="100%"/>
-                </td>
+            <tr>    
+                <th style="text-align: left;"><div style="padding: 20px;">(pre: top 12000 & post: top 300 boxes</div></th>
             </tr>
+            <div id="bruteforce">
+                <tr style="background-color: ;">
+                    <td id="pre1">
+                        <img src="https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/3373056123_8fd7fb0365_b_pre1.jpg" width="100%"/>
+                    </td>
+                    <td id="post1">
+                        <img src="https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/3373056123_8fd7fb0365_b_post1.jpg" width="100%"/>
+                    </td>
+                </tr>
+                <tr style="background-color: ;">
+                    <td id="pre2">
+                        <img src="https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/3373056123_8fd7fb0365_b_pre2.jpg" width="100%"/>
+                    </td>
+                    <td id="post2">
+                        <img src="https://raw.githubusercontent.com/progvasu/rpnVisualizer/master/topGBbox/3373056123_8fd7fb0365_b_post2.jpg" width="100%"/>
+                    </td>
+                </tr>
+                <tr style="background-color: ;">
+                    <td id="pre3">
+                    </td>
+                    <td id="post3">
+                    </td>
+                </tr>
+                <tr style="background-color: ;">
+                    <td id="pre4">
+                    </td>
+                    <td id="post4">
+                    </td>
+                </tr>
+                <tr style="background-color: ;">
+                    <td id="pre5">
+                    </td>
+                    <td id="post5">
+                    </td>
+                </tr>
+                <tr style="background-color: ;">
+                    <td id="pre6">
+                    </td>
+                    <td id="post6">
+                    </td>
+                </tr>
+            </div>
         </table>
     </body>
 </html>
